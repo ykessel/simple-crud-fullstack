@@ -1,0 +1,29 @@
+<div class="content">
+    <mat-card>
+      <mat-card-content>
+        <form [formGroup]="almacenForm" (ngSubmit)="add()">
+          <mat-form-field appearance="outline">
+            <mat-label>Encargado</mat-label>
+            <input matInput formControlName="encargado"/>
+          </mat-form-field>
+          <br />
+          <mat-form-field appearance="outline">
+            <mat-label>Direccion</mat-label>
+            <input matInput formControlName="direccion"/>
+          </mat-form-field>
+          <br />
+          <div class="login-buttons">
+            <button mat-raised-button color="warn">Cancelar</button>
+            <button
+              mat-raised-button
+              [disabled]="almacenForm.invalid"
+              type="submit"
+              color="primary"
+            >
+              Crear</button
+            ><br />
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>

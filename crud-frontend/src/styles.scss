@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.content {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 3rem;
+  flex-direction: column;
+  justify-content: center;
+
+  mat-card {
+    width: fit-content;
+    align-self: center;
+  }
+
+  a {
+    max-width: 2rem;
+    align-self: flex-start;
+  }
+}
+
+.login-buttons {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    width: 100%;
+
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
+}

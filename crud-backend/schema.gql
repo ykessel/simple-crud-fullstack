@@ -1,0 +1,168 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  """id of the user"""
+  userId: String!
+
+  """Example field (placeholder)"""
+  exampleField: Int!
+
+  """first name of the user"""
+  firstName: String!
+
+  """last name of the user"""
+  lastName: String!
+
+  """email of the user"""
+  email: String!
+
+  """role of the user"""
+  role: String!
+}
+
+type Producto {
+  """Id del producto"""
+  productoId: String!
+
+  """Nombre del producto"""
+  nombre: String!
+
+  """Precio del producto"""
+  precio: Int!
+}
+
+type Venta {
+  """Id de la venta"""
+  ventaId: String!
+
+  """Nombre del vendedor"""
+  vendedor: String!
+
+  """Nombre del comprador"""
+  comprador: String!
+}
+
+type Almacene {
+  """Id del alamacen"""
+  almacenId: String!
+
+  """Encargado del alamcen"""
+  encargado: String!
+
+  """Direccion del alamcen"""
+  direccion: String!
+}
+
+type Query {
+  users: [User!]!
+  user(userId: String!): User!
+  productos: [Producto!]!
+  producto(productoId: String!): Producto!
+  ventas: [Venta!]!
+  venta(ventaId: String!): Venta!
+  almacenes: [Almacene!]!
+  almacene(almacenId: String!): Almacene!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  removeUser(userId: String!): User!
+  createProducto(createProductoInput: CreateProductoInput!): Producto!
+  updateProducto(updateProductoInput: UpdateProductoInput!): Producto!
+  removeProducto(productoId: String!): Producto!
+  createVenta(createVentaInput: CreateVentaInput!): Venta!
+  updateVenta(updateVentaInput: UpdateVentaInput!): Venta!
+  removeVenta(ventaId: String!): Venta!
+  createAlmacene(createAlmaceneInput: CreateAlmaceneInput!): Almacene!
+  updateAlmacene(updateAlmaceneInput: UpdateAlmaceneInput!): Almacene!
+  removeAlmacene(almacenId: String!): Almacene!
+}
+
+input CreateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+
+  """first name of the user"""
+  firstName: String!
+
+  """last name of the user"""
+  lastName: String!
+
+  """email of the user"""
+  email: String!
+
+  """role of the user"""
+  role: String!
+}
+
+input UpdateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+
+  """first name of the user"""
+  firstName: String
+
+  """last name of the user"""
+  lastName: String
+
+  """email of the user"""
+  email: String
+
+  """role of the user"""
+  role: String
+  userId: String!
+}
+
+input CreateProductoInput {
+  """Nombre del producto"""
+  nombre: String!
+
+  """Precio del producto"""
+  precio: Int!
+}
+
+input UpdateProductoInput {
+  """Nombre del producto"""
+  nombre: String
+
+  """Precio del producto"""
+  precio: Int
+  productoId: String!
+}
+
+input CreateVentaInput {
+  """Nombre del vendedor"""
+  vendedor: String!
+
+  """Nombre del comprador"""
+  comprador: String!
+}
+
+input UpdateVentaInput {
+  """Nombre del vendedor"""
+  vendedor: String
+
+  """Nombre del comprador"""
+  comprador: String
+  ventaId: String!
+}
+
+input CreateAlmaceneInput {
+  """Encargado del alamcen"""
+  encargado: String!
+
+  """Direccion del alamcen"""
+  direccion: String!
+}
+
+input UpdateAlmaceneInput {
+  """Encargado del alamcen"""
+  encargado: String
+
+  """Direccion del alamcen"""
+  direccion: String
+  almacenId: String!
+}

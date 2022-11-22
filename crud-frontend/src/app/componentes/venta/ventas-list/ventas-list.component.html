@@ -1,0 +1,51 @@
+<div class="content">
+  <a mat-raised-button color="primary" routerLink="ventas-add">+</a>
+
+  <div class="mat-elevation-z8">
+    <table mat-table class="full-width-table" matSort aria-label="Elements">
+      <!-- Id Column -->
+      <ng-container matColumnDef="ventaId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+        <td mat-cell *matCellDef="let row">{{ row.ventaId }}</td>
+      </ng-container>
+
+      <!-- Vendedor Column  -->
+      <ng-container matColumnDef="vendedor">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Vendedor</th>
+        <td mat-cell *matCellDef="let row">{{ row.vendedor }}</td>
+      </ng-container>
+
+      <!-- Comprador Column  -->
+      <ng-container matColumnDef="comprador">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Comprador</th>
+        <td mat-cell *matCellDef="let row">{{ row.comprador }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="opciones">
+        <th mat-header-cell *matHeaderCellDef>Opciones</th>
+        <td mat-cell *matCellDef="let row">
+          <a mat-button color="accent" [routerLink]="['ventas-edit', row]"
+            >EDIT</a
+          >
+          <button mat-button color="warn" (click)="remove(row.ventaId)">
+            REMOVE
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      #paginator
+      [length]="dataSource.data.length"
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20]"
+      aria-label="Select page"
+    >
+    </mat-paginator>
+  </div>
+</div>
